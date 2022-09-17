@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Homework 2 Part 1</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning JavaScript, jQuery, AJAX">
+    <meta name="keywords" content="JavaScript, jQuery, AJAX">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        
+        #myForm{
+            width: 550px;
+            margin: 0px auto;
+        }
+       
+    </style>
+    
+</head>
+
+
+<body>
+    <header>
+        <h1>CNIT 133 Homework 2 - Basic Operations</h1>
+    </header>
+
+    <nav>
+        <a class="active" href="hw2.html">Homework 2 </a>
+        <a href="hw3.html">Homework 3 </a>
+        <a href="hw4.html">Homework 4 </a>
+        <a href="h2Part1.html">Part 1 </a>
+        <a class="part" href="hw2Part2.html">Part 2 </a>
+        <a href="hw2Part3.html">Part 3 </a>
+    </nav>
+<body>
+    
+    <script>
+        function process() {
+            var num1, num2, num3, sum, average, product, smallest, largest;
+
+            num1 = document.getElementById("firstInt").value;
+            num2 = document.getElementById("secondInt").value;
+            num3 = document.getElementById("thirdInt").value;
+
+            n1 = parseInt(num1);
+            n2 = parseInt(num2);
+            n3 = parseInt(num3);
+
+            sum = n1 + n2 + n3;
+            average = (n1 + n2 + n3) / 3;
+            product = n1 * n2 * n3;
+            smallest = Math.min(n1, n2, n3);
+            largest = Math.max(n1, n2, n3);
+            document.getElementById("result").value = ("The inputted integers were " + n1 + " ," + n2 + " ," + n3 +
+                "\nThe sum of the integers was " + sum +
+                "\nThe average of the integers was " + average +
+                "\nThe product of the integers was " + product +
+                "\nThe smallest integer was " + smallest +
+                "\nThe largest integer was " + largest)
+
+
+        }
+    </script>
+
+<script>
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#result").fadeTo("slow",0.25);
+  });
+});
+    </script>
+
+
+    <form id="p2Form" name="p2Form">
+        <table>
+            <tr>
+                <td>First Integer:</td>
+                <td><input type="number" id="firstInt"> </td>
+            </tr>
+            <tr>
+                <td>Second Integer</td>
+                <td><input type="number" id="secondInt"></td>
+            </tr>
+            <tr>
+                <td>Third Integer</td>
+                <td><input type="number" id="thirdInt"></td>
+            </tr>
+        </table>
+
+        <br>
+        <input type="button" onclick="process()" value="SUBMIT">
+        <input type="reset" value="RESET">
+        <button>CLICK TO FADE RESULTS</button>
+        <br><br>
+
+        Results: <textarea rows="6" cols="40" id="result" readonly></textarea>
+
+    </form>
+    <footer>
+        <p>Jin Zhang</p>
+    </footer>
+    
+
+</body>
+</html>
