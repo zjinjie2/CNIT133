@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework 3 Part 2</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning JavaScript function">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
+
+    <script>
+        $(function () {
+            $(document).tooltip({
+                track: true
+            });
+        });
+    </script>
+    <style>
+        /* label {
+            display: inline-block;
+            width: 3em;
+        } */
+
+        /* body { width: 800px; margin: 0px auto; background-color: #e2e201; padding: 10px;} */
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $("#h3P2Form").validate({
+                rules: {
+                    item1: {
+                        required: true,
+                        number: true
+                    },
+                    item2: {
+                        required: true,
+                        number: true
+                    },
+                    item3: {
+                        required: true,
+                        number: true
+                    },
+                    item4: {
+                        required: true,
+                        number: true
+                    }
+                }
+            });
+        });
+
+        function getTotal() {
+            if ($("#h3P2Form").valid()) {
+                var input1 = parseInt(document.getElementById("item1").value);
+                var nSold1 = input1;
+                var input2 = parseInt(document.getElementById("item2").value);
+                var nSold2 = input2;
+                var input3 = parseInt(document.getElementById("item3").value);
+                var nSold3 = input3;
+                var input4 = parseInt(document.getElementById("item4").value);
+                var nSold4 = input4;
+                var com1 = 239.99 * nSold1;
+                var com1Fixed = com1.toFixed(2);
+                var com2 = 129.75 * nSold2;
+                var com2Fixed = com2.toFixed(2);
+                var com3 = 99.95 * nSold3;
+                var com3Fixed = com3.toFixed(2);
+                var com4 = 350.89 * nSold4;
+                var com4Fixed = com4.toFixed(2);
+                var totalAmount = com1 + com2 + com3 + com4;
+                var totalAmountFixed = totalAmount.toFixed(2);
+                var totalEarn = totalAmount * .09 + 200;
+                var totalEarnFixed = totalEarn.toFixed(2);
+
+                document.getElementById("sold1").value = nSold1;
+                document.getElementById("sold2").value = nSold2;
+                document.getElementById("sold3").value = nSold3;
+                document.getElementById("sold4").value = nSold4;
+                document.getElementById("total1").value = com1Fixed;
+                document.getElementById("total2").value = com2Fixed;
+                document.getElementById("total3").value = com3Fixed;
+                document.getElementById("total4").value = com4Fixed;
+                document.getElementById("totalSold").value = totalAmountFixed;
+                document.getElementById("totalWeekly").value = totalEarnFixed;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>CNIT 133 Homework 2 - Basic Operations</h1>
+    </header>
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a class="active" href="hw2.html">Homework 2 </a>
+        <a href="hw3.html">Homework 3 </a>
+        <a href="hw4.html">Homework 4 </a>
+        <a class="part" href="h2Part1.html">Part 1 </a>
+        <a href="hw2Part2.html">Part 2 </a>
+        <a href="hw2Part3.html">Part 3 </a>
+    </nav>
+
+
+    <form id="h3P2Form" name="h3P2Form">
+        <table>
+            <tr>
+                <td><label for="salesPerson">SalesPerson</label></td>
+                <td><input id="salesPerson" name="salesPerson"
+                        title="Please make sure that the salesperson's name is spelled correctly">
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2"><br>Input the number of items sold for each item number:</th>
+            </tr>
+            <tr>
+                <td><label for="item1">Item 1</label></td>
+                <td><input type="text" id="item1" name="item1"></td>
+            </tr>
+            <tr>
+                <td><label for="item2">Item 2</label></td>
+                <td><input type="text" id="item2" name="item2"></td>
+            </tr>
+            <tr>
+                <td><label for="item3">Item 3</label></td>
+                <td><input type="text" id="item3" name="item3"></td>
+            </tr>
+            <tr>
+                <td><label for="item4">Item 4</label></td>
+                <td><input type="text" id="item4" name="item4"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="SUBMIT" onclick="getTotal()"></td>
+                <td><input type="reset" value="RESET" onclick="window.location.reload();"></td>
+            </tr>
+        </table>
+
+        <table id="output">
+            <tr>
+                <th>Item #</th>
+                <th>Price</th>
+                <th>Number Sold</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>$239.99</td>
+                <td><input type="text" id="sold1" name="sold1" readonly></td>
+                <td><input type="text" id="total1" name="total1" readonly></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>$129.75</td>
+                <td><input type="text" id="sold2" name="sold2" readonly></td>
+                <td><input type="text" id="total2" name="total2" readonly></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>$99.95</td>
+                <td><input type="text" id="sold3" name="sold3" readonly></td>
+                <td><input type="text" id="total3" name="total3" readonly></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>$350.89</td>
+                <td><input type="text" id="sold4" name="sold4" readonly></td>
+                <td><input type="text" id="total4" name="total4" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="3">Total Amount Sold:</td>
+                <td><input type="text" id="totalSold" name="totalSold" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="3">Total Weekly Earnings:</td>
+                <td><input type="text" id="totalWeekly" name="totalWeekly" readonly></td>
+            </tr>
+
+
+        </table>
+    </form>
+
+
+    <script>
+        var input1 = parseInt(document.getElementById("item1").value);
+        var nSold1 = input1;
+        var input2 = parseInt(document.getElementById("item2").value);
+        var nSold2 = input2;
+        var input3 = parseInt(document.getElementById("item3").value);
+        var nSold3 = input3;
+        var input4 = parseInt(document.getElementById("item4").value);
+        var nSold4 = input4;
+        var com1 = 239.99 * nSold1;
+        var com2 = 129.75 * nSold2;
+        var com3 = 99.95 * nSold3;
+        var com4 = 350.89 * nSold4;
+        var totalAmount = com1 + com2 + com3 + com4;
+        totalEarn = totalAmount * 9 % +200;
+
+        function getResults() {
+
+
+        }
+
+        The salespeople receive $200 per week, plus 9 % of their gross sales
+        for that week.For example, a salesperson who sells $5000 worth of merchandise in a week receives $200 plus 9 %
+            of $5000, or a total of $650.
+    </script>
+
+</body>
+
+</html>
