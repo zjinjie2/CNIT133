@@ -5,6 +5,7 @@
     <title>Homework 3 Part 2</title>
     <meta charset="UTF-8">
     <meta name="description" content="learning JavaScript function">
+    <link rel="stylesheet" href="css/hw2.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
@@ -96,12 +97,13 @@
 
     <nav>
         <a href="cnit133.html">HOME</a>
-        <a class="active" href="hw2.html">Homework 2 </a>
-        <a href="hw3.html">Homework 3 </a>
+        <a href="hw2.html">Homework 2 </a>
+        <a class="active" href="hw3.html">Homework 3 </a>
         <a href="hw4.html">Homework 4 </a>
-        <a class="part" href="h2Part1.html">Part 1 </a>
-        <a href="hw2Part2.html">Part 2 </a>
-        <a href="hw2Part3.html">Part 3 </a>
+        <a href="hw3Part1.html">Part 1 </a>
+        <a class="part" href="hw3Part2.html">Part 2 </a>
+        <a href="hw3Part3.html">Part 3 </a>
+        <a href="hw3Part4.html">Part 4</a>
     </nav>
 
 
@@ -183,32 +185,11 @@
         </table>
     </form>
 
-
-    <script>
-        var input1 = parseInt(document.getElementById("item1").value);
-        var nSold1 = input1;
-        var input2 = parseInt(document.getElementById("item2").value);
-        var nSold2 = input2;
-        var input3 = parseInt(document.getElementById("item3").value);
-        var nSold3 = input3;
-        var input4 = parseInt(document.getElementById("item4").value);
-        var nSold4 = input4;
-        var com1 = 239.99 * nSold1;
-        var com2 = 129.75 * nSold2;
-        var com3 = 99.95 * nSold3;
-        var com4 = 350.89 * nSold4;
-        var totalAmount = com1 + com2 + com3 + com4;
-        totalEarn = totalAmount * 9 % +200;
-
-        function getResults() {
+    <footer>
+        <p>Jin Zhang</p>
+    </footer>
 
 
-        }
-
-        The salespeople receive $200 per week, plus 9 % of their gross sales
-        for that week.For example, a salesperson who sells $5000 worth of merchandise in a week receives $200 plus 9 %
-            of $5000, or a total of $650.
-    </script>
 
 </body>
 
