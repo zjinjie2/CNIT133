@@ -71,7 +71,11 @@ p{
 
 }
 
-#p2Form, #p3Form{
+h2 {
+    text-align: center;
+}
+
+#p2Form, #p3Form,#hw3P1Form,#h3P2Form,#hw3P3Form,#h3P4Form{
   width: 550px;
   margin: 0px auto;
 }
