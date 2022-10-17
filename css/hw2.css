@@ -90,7 +90,7 @@ padding: 50px;
 }
 
 
-table {
+#hw4Content2 table {
     display: inline-block;  
     box-sizing: border-box;
     width: 33%;
@@ -98,22 +98,22 @@ table {
   }
 
 
-th {
+  #hw4Content2 th {
     background-color: maroon;
     color: white;
   }
 
-tr:nth-child(even) {
+  #hw4Content2 tr:nth-child(even) {
     background-color: #0a697c;
     color: rgb(213, 131, 25);
   }
 
-  tr:nth-child(odd) {
+  #hw4Content2 tr:nth-child(odd) {
     background-color: #1e00ff;
     color: rgb(241, 180, 25);
   }
 
-  th, td {
+  #hw4Content2 th, #hw4Content2 td {
     border: 1px solid rgb(245, 245, 239);
     border-style: dotted;
     text-align: center;
