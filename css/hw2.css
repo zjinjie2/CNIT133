@@ -9,8 +9,8 @@ color: white;
 header {
     background-color: #01865abc;
     color: white;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     text-align: center;
 
 }
@@ -27,7 +27,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 20px;
+    padding: 2px;
 }
 nav {
     margin: 2rem;
@@ -75,7 +75,7 @@ h2 {
     text-align: center;
 }
 
-#p2Form, #p3Form,#hw3P1Form,#h3P2Form,#hw3P3Form,#h3P4Form{
+#p2Form, #p3Form,#hw3P1Form,#h3P2Form,#hw3P3Form,#h3P4Form, #hw4Content1,#hw4Content2{
   width: 550px;
   margin: 0px auto;
 }
@@ -88,3 +88,33 @@ h2 {
 text-align: center;
 padding: 50px;
 }
+
+
+table {
+    display: inline-block;  
+    box-sizing: border-box;
+    width: 33%;
+    padding: 5%;
+  }
+
+
+th {
+    background-color: maroon;
+    color: white;
+  }
+
+tr:nth-child(even) {
+    background-color: #0a697c;
+    color: rgb(213, 131, 25);
+  }
+
+  tr:nth-child(odd) {
+    background-color: #1e00ff;
+    color: rgb(241, 180, 25);
+  }
+
+  th, td {
+    border: 1px solid rgb(245, 245, 239);
+    border-style: dotted;
+    text-align: center;
+  }
