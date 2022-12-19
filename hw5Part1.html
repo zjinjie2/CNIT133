@@ -11,31 +11,32 @@
 
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 
-   <script> $(document).ready(function(){
+    <script>
+        $(document).ready(function () {
 
-        $("#hw5Part1Form").validate({
-      
-              messages: {
-                  name: "Please enter your name",
-                              gender: "Please choose a rating",
-                              age: "Please choose at least one team",
-                              occupation: "Please choose an occupation",
-              },
-      
- 
-      
-        errorPlacement: function(error, element) {
-        if ( element.is(":radio") || element.is(":checkbox")) {
-          error.appendTo( element.parent());
-        } else {
-          error.insertAfter(element);
-        }
-        } 
-       });
-      });
-      </script>
-      
-      
+            $("#hw5Part1Form").validate({
+
+                messages: {
+                    name: "Please enter your name",
+                    gender: "Please choose a rating",
+                    age: "Please choose at least one team",
+                    occupation: "Please choose an occupation",
+                },
+
+
+
+                errorPlacement: function (error, element) {
+                    if (element.is(":radio") || element.is(":checkbox")) {
+                        error.appendTo(element.parent());
+                    } else {
+                        error.insertAfter(element);
+                    }
+                }
+            });
+        });
+    </script>
+
+
 </head>
 
 <body>
@@ -58,50 +59,52 @@
         <a href="hw5Part2.html">Part 2 </a>
         <a href="hw5Part3.html">Part 3 </a>
     </nav>
-    
+
     <div id="hw5Content">
 
         <table>
-            <tr>
-                <form  method="post" id="hw5Part1Form" name="hw5Part1Form">
+
+            <form method="post" id="hw5Part1Form" name="hw5Part1Form">
+                <tr>
                     <td>Name</td>
                     <td>
                         <input type="text" name="name" id="name" size="20" class="required" autofocus>
                     </td>
-            </tr>
-            <tr>
-                <td>Gender:</td>
-                <td>Male <input type="radio" id="gender1" name="gender" class="required" value="Male"> Female<input
-                        type="radio" id="gender2" name="gender" value="Female"> Prefer not to say<input
-                        type="radio" id="gender3" name="gender" value="Prefer not to say"></td>
-            </tr>
-            <tr>
-                <td><label for="age" class="label">Age:</label></td>
-                <td> <select name="age" id="age" class="required">
-                        <option value="">-Choose one-</option>
-                        <option value="under18">under 18</option>
-                        <option value="18-25">18-25</option>
-                        <option value="26-45">26-45</option>
-                        <option value="46-65">46-65</option>
-                        <option value="65+">65+</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Occupation: </td>
-                <td>Student<input type="checkbox" name="occupation" id="occupation1" value="Student"
-                        class="required"> Faculty<input type="checkbox" name="occupation" id="occupation2"></td>
-            </tr>
-            <tr>
-  
-     
-        <td><input type="submit" id="submit_button" value="SUBMIT"></td>
-        <td><input type="button" onclick="window.location.reload();" value="RESET"></td>
-    
-    </tr>
-</table>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>Male <input type="radio" id="gender1" name="gender" class="required" value="Male"> Female<input
+                            type="radio" id="gender2" name="gender" value="Female"> Prefer not to say<input type="radio"
+                            id="gender3" name="gender" value="Prefer not to say"></td>
+                </tr>
+                <tr>
+                    <td><label for="age" class="label">Age:</label></td>
+                    <td> <select name="age" id="age" class="required">
+                            <option value="">-Choose one-</option>
+                            <option value="under18">under 18</option>
+                            <option value="18-25">18-25</option>
+                            <option value="26-45">26-45</option>
+                            <option value="46-65">46-65</option>
+                            <option value="65+">65+</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Occupation: </td>
+                    <td>Student<input type="checkbox" name="occupation" id="occupation1" value="Student"
+                            class="required"> Faculty<input type="checkbox" name="occupation" id="occupation2"></td>
+                </tr>
+                <tr>
 
-</div>
+
+                    <td><input type="submit" id="submit_button" value="SUBMIT"></td>
+                    <td><input type="button" onclick="window.location.reload();" value="RESET"></td>
+
+                </tr>
+            </form>
+        </table>
+
+    </div>
 
 </body>
 
