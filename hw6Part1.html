@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework 6 Part 1</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning JavaScript, jQuery, AJAX">
+    <meta name="keywords" content="JavaScript, jQuery, AJAX">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
+<script>
+    function roundNumber() {
+        var err = "Invalid input - type a number with at least 4 decimals";
+        var inputNum = parseFloat(document.getElementById("number").value);
+
+        if ( isNaN(inputNum)) {
+            document.getElementById("err").innerHTML = err;
+
+        }else {
+            document.getElementById("output").value = 
+            "The entered number: " + inputNum + 
+            "\n rounded to the nearest integer: " + Math.round(inputNum)+
+            "\n the square root and rounded to an integer: " +  Math.round(Math.sqrt(inputNum))+
+            "\n rounded to the neatest tenths position: " + (inputNum.toFixed(1)) +
+            "\n rounded to the neatest hundredths position: " + (inputNum.toFixed(2)) +
+            "\n rounded to the neatest thousandths position: " + (inputNum.toFixed(3)) ;
+
+        }
+    }
+
+
+
+</script>
+
+
+</head>
+
+<body>
+
+    <header>
+        <h1>CNIT 133 Homework 6 - Objects</h1>
+    </header>
+
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a href="hw2.html">Homework 2 </a>
+        <a href="hw3.html">Homework 3 </a>
+        <a href="hw4.html">Homework 4 </a>
+        <a href="hw5.html">Homework 5 </a>
+        <a class="active" href="hw6.html">Homework 6 </a>
+        <a href="hw7.html">Homework 7 </a>
+        <a href="hw8.html">Homework 8 </a>
+        <a class="part" href="hw6Part1.html">Part 1 </a>
+        <a href="hw6Part2.html">Part 2 </a>
+        <a href="hw6Part3.html">Part 3 </a>
+    </nav>
+
+
+
+
+<form name="hw6Part1" id="hw6Part1">
+    <h3>Math objects</h3>
+    <label for="number">Enter a number with at least 4 decimal positions: </label>
+    <br>
+    <input type="number" id="number">
+    <input type="button" value="ROUND" onclick="roundNumber()">
+    <br>
+    <textarea name="output" id="output" cols="60" rows="10" readonly></textarea>
+    <br>
+    <input type="reset" value="RESET" onclick="window.location.reload();" >
+
+</form>
+<div id="err"></div>
+
+
+</body>
+
+</html>
