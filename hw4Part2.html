@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework 4 Part 1</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning JavaScript, jQuery, AJAX">
+    <meta name="keywords" content="JavaScript, jQuery, AJAX">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</head>
+
+
+
+
+</head>
+<body>
+    <header>
+        <h1>CNIT 133 Homework 4 - Looping Statements </h1>
+    </header>
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a href="hw2.html">Homework 2 </a>
+        <a href="hw3.html">Homework 3 </a>
+        <a class="active" href="hw4.html">Homework 4 </a>
+        <a href="hw5.html">Homework 5 </a>
+        <a href="hw6.html">Homework 6 </a>
+        <a href="hw7.html">Homework 7 </a>
+        <a href="hw8.html">Homework 8 </a>
+        <a href="hw4Part1.html">Part 1 </a>
+        <a class="part" href="hw4Part2.html">Part 2 </a>
+    </nav>
+
+<div id="hw4Content2">
+    <script>
+        const principal = 1000;
+
+        for (i = 0.05; i <=0.07; i+= 0.01) {
+            document.write(
+                "<table id='hw4Table'>" +
+                "<tr>" +
+                "<th>Year</th>" +
+                "<th>Amount on deposit</th>" +
+                "<th>Interest Rate</th>" +
+                "</tr>")
+                
+                for (j=1; j <= 10; j++) {
+                    var amount = principal * Math.pow(1+i, j);
+                    document.write(
+                    "<tr>" +
+                    "<td>" + j + "</td>" +
+                    "<td>" + amount.toFixed(2) + "</td>" +
+                    "<td>" + i.toFixed(2) +"</td>" +
+                    "</tr>" );
+                
+                }
+                document.write("</table>");
+            };
+
+    </script>
+    </div>
+
+    <footer>
+        <p>Jin Zhang</p>
+    </footer>
+</body>
+</html>

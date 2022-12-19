@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework 4 Part 1</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning JavaScript, jQuery, AJAX">
+    <meta name="keywords" content="JavaScript, jQuery, AJAX">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>CNIT 133 Homework 4 - Looping Statements </h1>
+    </header>
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a href="hw2.html">Homework 2 </a>
+        <a href="hw3.html">Homework 3 </a>
+        <a class="active" href="hw4.html">Homework 4 </a>
+        <a href="hw5.html">Homework 5 </a>
+        <a href="hw6.html">Homework 6 </a>
+        <a href="hw7.html">Homework 7 </a>
+        <a href="hw8.html">Homework 8 </a>
+        <a class="part" href="hw4Part1.html">Part 1 </a>
+        <a href="hw4Part2.html">Part 2 </a>
+    </nav>
+
+    <div id="draggable">
+        <p>DRAG </p>
+    </div>
+
+    <div id="hw4Content1">
+        <script>
+            var product = 1;
+            var part1nums = "";
+            var sum = 0;
+            for (i = 5; i <= 21; i += 4) {
+                product *= i;
+                sum += i;
+                part1nums += i + " ";
+            }
+            document.write(part1nums + "<br>" + "The product of every fourth integer from 5 to 21 is " + product +
+                "<br>");
+            document.write("The sum of every fourth integer from 5 to 21 is " + sum);
+        </script>
+
+
+
+        <script>
+            var product2 = 1;
+            var part2nums = "";
+            var sum2 = 0;
+            var x = 3;
+            while (x <= 21) {
+                part2nums += x + " ";
+                product2 *= x;
+                sum2 += x;
+                x += 3;
+
+            }
+            document.write("<br><br>" + part2nums);
+            document.write("<br>" + "The product of every third integer from 3 to 21 is " + product2);
+            document.write("<br>" + "The sum of every third integer from 3 to 21 is " + sum2);
+        </script>
+
+    </div>
+    <script>
+        $(function () {
+            $("#draggable").draggable();
+        });
+    </script>
+
+
+
+
+
+    <footer>
+        <p>Jin Zhang</p>
+    </footer>
+</body>
+
+</html>
