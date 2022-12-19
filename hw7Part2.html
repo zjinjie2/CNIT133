@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework 7 Part 2</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning JavaScript, jQuery, AJAX">
+    <meta name="keywords" content="JavaScript, jQuery, AJAX">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <style>
+        nav ul li {
+            float: left;
+            display: inline;
+        }
+
+        nav ul li ul {
+            position: absolute;
+            width: 100px;
+
+        }
+
+        nav ul li ul li a {
+            display: block;
+            padding: 15px 10px;
+        }
+
+
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('nav li ul').hide().removeClass('fallback');
+            $('nav li').hover(
+                function () {
+                    $('ul', this).stop().slideDown(200);
+                },
+                function () {
+                    $('ul', this).stop().slideUp(200);
+                }
+            );
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>CNIT 133 Homework 7 - Object Model and Miscellaneous jQuery</h1>
+    </header>
+
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a href="hw2.html">Homework 2 </a>
+        <a href="hw3.html">Homework 3 </a>
+        <a href="hw4.html">Homework 4 </a>
+        <a href="hw5.html">Homework 5 </a>
+        <a href="hw6.html">Homework 6 </a>
+        <a class="active" href="hw7.html">Homework 7 </a>
+        <a href="hw8.html">Homework 8 </a>
+        <a href="hw7Part1.html">Part 1 </a>
+        <a class="part" href="hw7Part2.html">Part 2 </a>
+
+    </nav>
+
+
+
+
+
+    <div name="hw7Part2" id="hw7Part2">
+        <nav>
+            <ul>
+                <li><a href="#">Homework 1</a></li>
+                <li>
+                    <a href="#">Homework 2</a>
+                    <ul class="fallback">
+                        <li><a href="hw2Part1.html">Part 1</a></li>
+                        <li><a href="hw2Part2.html">Part 2</a></li>
+                        <li><a href="hw2Part3.html">Part 3</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Homework 3</a>
+                    <ul class="fallback">
+                        <li><a href="hw3Part1.html">Part 1</a></li>
+                        <li><a href="hw3Part2.html">Part 2</a></li>
+                        <li><a href="hw3Part3.html">Part 3</a></li>
+                        <li><a href="hw3Part4.html">Part 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Homework 4</a>
+                    <ul class="fallback">
+                        <li><a href="hw4Part1.html">Part 1</a></li>
+                        <li><a href="hw4Part2.html">Part 2</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Homework 5</a>
+                    <ul class="fallback">
+                        <li><a href="hw5Part1.html">Part 1</a></li>
+                        <li><a href="hw5Part2.html">Part 2</a></li>
+                        <li><a href="hw5Part3.html">Part 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Homework 6</a>
+                    <ul class="fallback">
+                        <li><a href="hw6Part1.html">Part 1</a></li>
+                        <li><a href="hw6Part2.html">Part 2</a></li>
+                        <li><a href="hw6Part3.html">Part 3</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Homework 7</a>
+                    <ul class="fallback">
+                        <li><a href="hw7Part1.html">Part 1</a></li>
+                        <li><a href="hw7Part2.html">Part 2</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">Homework 8</a>
+
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+
+
+
+</body>
+
+</html>
