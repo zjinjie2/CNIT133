@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Homework 5 Part 3</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+    <script>
+        var stateArray = [ 
+            ["AL", "Alabama", "Montgomery", 4887871], 
+        ["AK", "Alaska", "Juneau", 737438], 
+        ["AZ", "Arizona", "Phoenix", 7171646], 
+        ["AR", "Arkansas", "Little Rock", 3010825], 
+        ["CA", "California", "Sacramento", 39557045], 
+        ["CO", "Colorado", "Denver", 5694564]
+        ];
+        function buttonPressed(){
+            var searchKey = document.forms["stateSearch"].elements["inputState"].value;
+            searchKey= searchKey.toUpperCase();
+            
+            var found = false;
+            for (var row = 0; row < stateArray.length; row++)
+            {
+                if ((stateArray[row][0] == searchKey) || (stateArray[row][1] == searchKey))
+            {
+            document.forms["stateSearch"].elements["stateAbbr"].value = stateArray[row][0];
+            document.forms["stateSearch"].elements["stateName"].value = stateArray[row][1];
+            document.forms["stateSearch"].elements["stateCapital"].value = stateArray[row][2];
+            document.forms["stateSearch"].elements["population"].value = stateArray[row][3];
+row = stateArray.length;
+found= true;
+        }
+    }
+
+    if (found == false) {
+        document.forms["stateSearch"].elements["stateAbbr"].value="State not found!";
+    }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>CNIT 133 Homework 5 - Arrays</h1>
+    </header>
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a href="hw2.html">Homework 2 </a>
+        <a href="hw3.html">Homework 3 </a>
+        <a href="hw4.html">Homework 4 </a>
+        <a class="active" href="hw5.html">Homework 5 </a>
+        <a href="hw6.html">Homework 6 </a>
+        <a href="hw7.html">Homework 7 </a>
+        <a href="hw8.html">Homework 8 </a>
+        <a  href="hw5Part1.html">Part 1 </a>
+        <a href="hw5Part2.html">Part 2 </a>
+        <a class="part" href="hw5Part3.html">Part 3 </a>
+    </nav>
+    
+    <div id="hw5Content3">
+<section class="states">
+
+<h2>States</h2>
+
+<table>
+    <tr>
+        <th>State Abbr</th>
+        <th>State Name</th>
+        <th>Capital</th>
+        <th>Population</th>
+    </tr>
+    <tr>
+        <td>AL</td>
+        <td>Alabama</td>
+        <td>Montgomery</td>
+        <td>4,887,871</td>
+    </tr>
+    <tr>
+        <td>AK</td>
+        <td>Alaska</td>
+        <td>Juneau</td>
+        <td>737,438</td>
+    </tr>
+    <tr>
+        <td>AZ</td>
+        <td>Arizona</td>
+        <td>Phoenix</td>
+        <td>7,171,646</td>
+    </tr>
+    <tr>
+        <td>AR</td>
+        <td>Arkansas</td>
+        <td>Little Rock</td>
+        <td>3,010,825</td>
+    </tr>
+    <tr>
+        <td>CA</td>
+        <td>California</td>
+        <td>Sacramento</td>
+        <td>39,557,045</td>
+    </tr>
+    <tr>
+        <td>CO</td>
+        <td>Colorado</td>
+        <td>Denver</td>
+        <td>5,694,564</td>
+    </tr>
+</table>
+<br>
+<form name="stateSearch">
+    <input type="text" size="20" name="inputState" autofocus>
+    <input type="button" onclick="buttonPressed();" value="State Info" name="search" id="search">
+
+<br>
+<table class="info">
+    <tr>
+        <td>State Abbr</td>
+        <td><input type="text" size="20" name="stateAbbr" id="stateAbbr"></td>
+    </tr>
+    <tr>
+        <td>State Name</td>
+        <td><input type="text" size="20" name="stateName" id="stateName"></td>
+    </tr>
+    <tr>
+        <td>Capital</td>
+        <td><input type="text" size="20" name="stateCapital" id="stateCapital"></td>
+    </tr>
+    <tr>
+        <td>Population</td>
+        <td><input type="text" size="20" name="population" id="population"></td>
+    </tr>
+
+</table>
+<br>
+<input type="reset" value="RESET" onclick="location.reload();">
+</form>
+</section>
+</div>
+</body>
+</html>

@@ -7,10 +7,10 @@ body {
 
 header {
     background-color: #01865abc;
-    /* background-image: url(../images/header_m.jpg); */
+
     color: white;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     text-align: center;
 
 }
@@ -27,7 +27,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 20px;
+    padding: 2px;
 }
 nav {
     margin: 2rem;
