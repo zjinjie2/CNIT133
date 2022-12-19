@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework 3 Part 1</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning JavaScript function">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hw3P1Form").validate({
+
+                rules: {
+                    hwAve: {
+                        required: true,
+                        number: true
+                    },
+                    midExam: {
+                        required: true,
+                        number: true
+                    },
+                    finalExam: {
+                        required: true,
+                        number: true
+                    },
+                    participation: {
+                        required: true,
+                        number: true
+                    }
+                }
+            });
+        });
+
+        function getResults() {
+
+            var hwAve = parseInt(document.getElementById("hwAve").value);
+            var midExam = parseInt(document.getElementById("midExam").value);
+            var finalExam = parseInt(document.getElementById("finalExam").value);
+            var participation = parseInt(document.getElementById("participation").value);
+
+            var finalAverage = (.5 * hwAve) + (.2 * midExam) + (.2 * finalExam) + (.1 * participation);
+            const errorMsg = "Please enter a valid numbers (0 - 100)."
+
+            if (hwAve < 0 || hwAve > 100 || midExam < 0 || midExam > 100 || finalExam < 0 || finalExam > 100 ||
+                participation < 0 || participation > 100) {
+                document.getElementById("error").innerHTML = errorMsg;
+            }
+
+            if (finalAverage >= 90) {
+                document.getElementById("results").value = "Final average: " + finalAverage + "\nFinal grade : A";
+            } else if (finalAverage >= 80) {
+                document.getElementById("results").value = "Final average: " + finalAverage + "\nFinal grade : B";
+            } else if (finalAverage >= 70) {
+                document.getElementById("results").value = "Final average: " + finalAverage + "\nFinal grade : C";
+            } else if (finalAverage >= 60) {
+                document.getElementById("results").value = "Final average: " + finalAverage +
+                    "\nFinal grade : D \nStudent must retake the course";
+            } else {
+                document.getElementById("results").value = "Final average: " + finalAverage +
+                    "\nFinal grade : F \nStudent must retake the course";
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>CNIT 133 Homework 3 - Function</h1>
+    </header>
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a href="hw2.html">Homework 2 </a>
+        <a class="active" href="hw3.html">Homework 3 </a>
+        <a href="hw4.html">Homework 4 </a>
+        <a href="hw5.html">Homework 5 </a>
+        <a href="hw6.html">Homework 6 </a>
+        <a href="hw7.html">Homework 7 </a>
+        <a href="hw8.html">Homework 8 </a>
+        <a class="part" href="hw3Part1.html">Part 1 </a>
+        <a href="hw3Part2.html">Part 2 </a>
+        <a href="hw3Part3.html">Part 3 </a>
+        <a href="hw3Part4.html">Part 4</a>
+    </nav>
+
+    <h2>Student Grades</h2>
+    <form id="hw3P1Form" name="hw3P1Form">
+        <table>
+            <tr>
+                <td>
+                    <label for="hwAve">Homework Average</label>
+                </td>
+                <td>
+                    <input type="number" id="hwAve">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="midExam">Mid-term exam score</label></td>
+                <td>
+                    <input type="number" id="midExam" name="midExam">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="finalExam">Final exam score</label></td>
+                <td>
+                    <input type="number" id="finalExam" name="finalExam">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="participation">Participation</label></td>
+                <td>
+                    <input type="number" id="participation" name="participation">
+                </td>
+            </tr>
+
+        </table>
+
+        <div id="result"></div>
+        <input type="button" value="SUBMIT" onclick="getResults()">
+        <input type="reset" value="RESET" onclick="window.location.reload()">
+        <br><br>
+        <div id="error"></div>
+        <label for="results">RESULTS</label> <br>
+        <textarea id="results" rows="5" cols="35" readonly></textarea>
+
+    </form>
+
+    <footer>
+        <p>Jin Zhang</p>
+    </footer>
+
+
+
+</body>
+
+</html>

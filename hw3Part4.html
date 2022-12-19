@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework 3 Part 4</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning JavaScript, jQuery, AJAX">
+    <meta name="keywords" content="JavaScript, jQuery, AJAX">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1>CNIT 133 Homework 3 - Function</h1>
+    </header>
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a href="hw2.html">Homework 2 </a>
+        <a class="active" href="hw3.html">Homework 3 </a>
+        <a href="hw4.html">Homework 4 </a>
+        <a href="hw5.html">Homework 5 </a>
+        <a href="hw6.html">Homework 6 </a>
+        <a href="hw7.html">Homework 7 </a>
+        <a href="hw8.html">Homework 8 </a>
+        <a href="hw3Part1.html">Part 1 </a>
+        <a href="hw3Part2.html">Part 2 </a>
+        <a href="hw3Part3.html">Part 3 </a>
+        <a class="part" href="hw3Part4.html">Part 4</a>
+    </nav>
+
+
+    <h2>Learn multiplication</h2>
+
+    <form name="h3P4Form" id="h3P4Form">
+        <table>
+            <tr>
+                <td>How much is</td>
+                <td><input name="num1" id="num1" type="text" size="2" readonly></td>
+                <td> X </td>
+                <td><input name="num2" id="num2" type="text" size="2" readonly></td>
+                <td> ?</td>
+            </tr>
+        </table>
+
+        <label for="answer">Answer</label>
+        <input type="text" id="answer" name="answer" size="5">
+        <br><br>
+        <input type="button" value="CHECK" onclick="check()">
+        <input type="reset" value="RESET" onclick="window.location.reload()">
+    </form>
+
+    <script>
+        var firstNum = Math.floor(Math.random() * 10);
+        var secondNum = Math.floor(Math.random() * 10);
+        document.getElementById("num1").value = firstNum;
+        document.getElementById("num2").value = secondNum;
+
+        function check() {
+            var userAnswer = parseInt(document.getElementById("answer").value);
+            if (userAnswer === firstNum * secondNum) {
+                if (confirm("Very good! Try another one?") == true) {
+                    window.location.reload();
+                }
+
+
+            } else {
+                alert("No. Please try again.")
+            }
+
+        }
+    </script>
+
+
+    <footer>
+        <p>Jin Zhang</p>
+    </footer>
+
+
+</body>
+
+</html>
