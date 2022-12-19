@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework 2 Part 1</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning JavaScript, jQuery, AJAX">
+    <meta name="keywords" content="JavaScript, jQuery, AJAX">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        #myForm {
+            width: 550px;
+            margin: 0px auto;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <header>
+        <h1>CNIT 133 Homework 2 - Basic Operations</h1>
+    </header>
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a class="active" href="hw2.html">Homework 2 </a>
+        <a href="hw3.html">Homework 3 </a>
+        <a href="hw4.html">Homework 4 </a>
+        <a href="hw5.html">Homework 5 </a>
+        <a href="hw6.html">Homework 6 </a>
+        <a href="hw7.html">Homework 7 </a>
+        <a href="hw8.html">Homework 8 </a>
+        <a href="h2Part1.html">Part 1 </a>
+        <a href="hw2Part2.html">Part 2 </a>
+        <a class="part" href="hw2Part3.html">Part 3 </a>
+    </nav>
+
+
+
+
+    <script>
+        function part3() {
+            var n1, n2, n3, n4, n5, num1, num2, num3, num4, num5;
+            pos = 0, neg = 0, zero = 0;
+
+            num1 = document.getElementById("firstInt").value;
+            num2 = document.getElementById("secondInt").value;
+            num3 = document.getElementById("thirdInt").value;
+            num4 = document.getElementById("fourthInt").value;
+            num5 = document.getElementById("fifthInt").value;
+
+            n1 = parseInt(num1);
+            n2 = parseInt(num2);
+            n3 = parseInt(num3);
+            n4 = parseInt(num4);
+            n5 = parseInt(num5);
+
+            var allNums = [n1, n2, n3, n4, n5];
+
+            for (let i = 0; i < allNums.length; i++) {
+                if (allNums[i] > 0) {
+                    pos++;
+                } else if (allNums[i] == 0) {
+                    zero++;
+                } else {
+                    neg++;
+                }
+
+            }
+            document.forms["p3Form"].elements["result3"].value = (
+                "The number of positive numbers = " + pos +
+                "\nThe number of negative numbers = " + neg +
+                "\nThe number of zeros = " + zero
+            );
+
+        }
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#result3").fadeTo("slow", 0.25);
+            });
+        });
+    </script>
+
+
+    <form id="p3Form" name="p3Form">
+
+        <table>
+            <tr>
+                <td>First Integer:</td>
+                <td><input type="number" id="firstInt"></td>
+
+                <td>Second Integer:</td>
+                <td><input type="number" id="secondInt"></td>
+            </tr>
+            <tr>
+                <td>Third Integer:</td>
+                <td><input type="number" id="thirdInt"></td>
+
+                <td>Fourth Integer:</td>
+                <td><input type="number" id="fourthInt"></td>
+            </tr>
+            <tr>
+                <td>Fifth Integer:</td>
+                <td><input type="number" id="fifthInt"></td>
+            </tr>
+
+        </table>
+        <br>
+        Results: <textarea rows="7" cols="40" id="result3" readonly></textarea>
+        <br>
+        <input type="button" onclick="part3()" value="SUBMIT">
+        <input type="reset" value="RESET">
+        <button>CLICK TO FADE RESULTS</button>
+
+
+    </form>
+    <footer>
+        <p>Jin Zhang</p>
+    </footer>
+
+</body>
+
+</html>
