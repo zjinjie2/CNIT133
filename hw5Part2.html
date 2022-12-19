@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Homework 5 Part 2</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
+    <script>
+        function goTo(myForm) {
+            var mySite = myForm.siteList.options[myForm.siteList.selectedIndex].value;
+            window.location = mySite;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>CNIT 133 Homework 5 - Arrays</h1>
+    </header>
+
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a href="hw2.html">Homework 2 </a>
+        <a href="hw3.html">Homework 3 </a>
+        <a href="hw4.html">Homework 4 </a>
+        <a class="active" href="hw5.html">Homework 5 </a>
+        <a href="hw6.html">Homework 6 </a>
+        <a href="hw7.html">Homework 7 </a>
+        <a href="hw8.html">Homework 8 </a>
+        <a href="hw5Part1.html">Part 1 </a>
+        <a class="part"  href="hw5Part2.html">Part 2 </a>
+        <a href="hw5Part3.html">Part 3 </a>
+    </nav>
+
+    <div id="hw5Content2">
+<form >
+    <h3>onChange event handler</h3>
+    <select name="siteList" onChange="goTo(this.form);">
+        <option>Choose a site</option>
+        <option value="https://www.ccsf.edu/academics/schools/stem/computer-networking-and-information-technology-department-cnit">CCSF CNIT Department</option>
+        <option value="https://www.ccsf.edu/degrees-certificates/computer-networking-and-information-technology">CNIT programs</option>
+        <option value="https://www.ccsf.edu/academics/class-schedule">Class schedule</option>
+    </select>
+</form>
+
+<br><br>
+
+<form>
+    <h3>onClick event handler</h3>
+    <select name="siteList" >
+        <option value="https://www.ccsf.edu/academics/schools/stem/computer-networking-and-information-technology-department-cnit">CCSF CNIT Department</option>
+        <option value="https://www.ccsf.edu/degrees-certificates/computer-networking-and-information-technology">CNIT programs</option>
+        <option value="https://www.ccsf.edu/academics/class-schedule">Class schedule</option>
+    </select>
+    <input type="button" value="Go" onclick="goTo(this.form);">
+</form>
+
+
+</div>
+    
+</body>
+</html>

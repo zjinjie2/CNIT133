@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework 5 Part 1</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning JavaScript, jQuery, AJAX">
+    <meta name="keywords" content="JavaScript, jQuery, AJAX">
+    <link rel="stylesheet" href="css/hw2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
+   <script> $(document).ready(function(){
+
+        $("#hw5Part1Form").validate({
+      
+              messages: {
+                  name: "Please enter your name",
+                              gender: "Please choose a rating",
+                              age: "Please choose at least one team",
+                              occupation: "Please choose an occupation",
+              },
+      
+ 
+      
+        errorPlacement: function(error, element) {
+        if ( element.is(":radio") || element.is(":checkbox")) {
+          error.appendTo( element.parent());
+        } else {
+          error.insertAfter(element);
+        }
+        } 
+       });
+      });
+      </script>
+      
+      
+</head>
+
+<body>
+
+    <header>
+        <h1>CNIT 133 Homework 5 - Arrays</h1>
+    </header>
+
+
+    <nav>
+        <a href="cnit133.html">HOME</a>
+        <a href="hw2.html">Homework 2 </a>
+        <a href="hw3.html">Homework 3 </a>
+        <a href="hw4.html">Homework 4 </a>
+        <a class="active" href="hw5.html">Homework 5 </a>
+        <a href="hw6.html">Homework 6 </a>
+        <a href="hw7.html">Homework 7 </a>
+        <a href="hw8.html">Homework 8 </a>
+        <a class="part" href="hw5Part1.html">Part 1 </a>
+        <a href="hw5Part2.html">Part 2 </a>
+        <a href="hw5Part3.html">Part 3 </a>
+    </nav>
+    
+    <div id="hw5Content">
+
+        <table>
+            <tr>
+                <form  method="post" id="hw5Part1Form" name="hw5Part1Form">
+                    <td>Name</td>
+                    <td>
+                        <input type="text" name="name" id="name" size="20" class="required" autofocus>
+                    </td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>Male <input type="radio" id="gender1" name="gender" class="required" value="Male"> Female<input
+                        type="radio" id="gender2" name="gender" value="Female"> Prefer not to say<input
+                        type="radio" id="gender3" name="gender" value="Prefer not to say"></td>
+            </tr>
+            <tr>
+                <td><label for="age" class="label">Age:</label></td>
+                <td> <select name="age" id="age" class="required">
+                        <option value="">-Choose one-</option>
+                        <option value="under18">under 18</option>
+                        <option value="18-25">18-25</option>
+                        <option value="26-45">26-45</option>
+                        <option value="46-65">46-65</option>
+                        <option value="65+">65+</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Occupation: </td>
+                <td>Student<input type="checkbox" name="occupation" id="occupation1" value="Student"
+                        class="required"> Faculty<input type="checkbox" name="occupation" id="occupation2"></td>
+            </tr>
+            <tr>
+  
+     
+        <td><input type="submit" id="submit_button" value="SUBMIT"></td>
+        <td><input type="button" onclick="window.location.reload();" value="RESET"></td>
+    
+    </tr>
+</table>
+
+</div>
+
+</body>
+
+</html>
